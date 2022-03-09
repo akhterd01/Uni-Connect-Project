@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato:wght@300&family=Roboto:wght@300&display=swap');
+
+:root {
+    --white: white;
+    --blue: rgb(29, 151, 192);
+    --orange: rgb(228, 149, 4);
+    --headerBlue: rgb(54, 122, 248);
+    --linkBlue: rgb(38, 91, 238);
+    --grey: rgb(32, 30, 30);
+    --box_shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+@keyframes backgroundFade {
+    0% {opacity: 0;}
+    100% {opacity: 1.0;}
+}
+
+/* 
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body-container {
+    position: relative;
+}
+
+.body-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+    animation-name: backgroundFade;
+    animation-duration: 3.0s;
+}
+
+body {
+    font-family: 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ----- Navbar Styling -----*/
+
+.nav-container {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: var(--grey);
+    border-bottom: 3px solid var(--headerBlue);
+    box-shadow: var(--box_shadow);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .header-wrapper {
+    position: relative;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+nav .header-wrapper:hover {
+    background-color: white;
+    color: var(--grey);
+}
+
+nav .header-wrapper h1 {
+    display: inline-block;
+}
+
+nav .header-wrapper i {
+    left: -30px;
+    top: 3px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+nav .header-wrapper h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    color: white;
+}
+
+nav .links-container ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav .links-container ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 0px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 0.85rem;
+}
+
+nav .links-container ul li a:hover {
+    color: var(--headerBlue);
+}
+
+.nav-container .max-container {
+    position: relative;
+}
+
+button.toggler {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+
+/* ----- End of Navbar Styling -----*/
+
+.welcome {
+    min-height: 100vh;
+    text-align: center;
+    padding: 50px;
+}
+
+.welcome h3 {
+    margin: 20px 0px;
+}
+
+.welcome form input[type="submit"] {
+    padding: 5px 10px;
+}
+
+.form-section {
+    height: 100%;
+    margin-top: 55px;
+}
+
+/* ----- Form Styling -----*/
+
+.register-flash-container {
+    max-width: 40%;
+    margin: auto;
+    width: 100%;
+}
+
+.register-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.form-control {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.form-control label {
+    text-align: left;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+    margin: 5px 0px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.form-control .reg-label {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+#university {
+    width: 80%;
+    font-family: 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.0rem;
+    border: 1.5px solid rgb(190, 188, 188);
+    font-weight: bolder;
+    border-radius: 2px;
+    padding: 4px 5px;
+}
+
+#university:focus {
+    outline: none;
+}
+
+#lname, #fname {
+    width: 80%;
+}
+
+.form-control .tool-tip-wrapper {
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.form-control .tooltip {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -120%;
+    transform: translate(-50%, -50%);
+    max-width: 240px;
+    width: 100%;
+    padding: 10px 10px;
+    background-color: var(--grey);
+    border-radius: 5px;
+    color: var(--headerBlue);
+    font-family: 'Roboto', sans-serif;
+    box-shadow: var(--box_shadow);
+    font-weight: bold;
+    z-index: 100;
+}
+
+
+#username:focus + span {
+    display: block;
+}
+
+#password:focus + span {
+    display: block;
+}
+
+#email:focus + span {
+    display: block;
+}
+
+.form-control .tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 99%; 
+    margin-top: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent var(--grey) transparent transparent;
+}
+
+.form-control input {
+    width: 100%;
+    font-family: 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.0rem;
+    text-align: left;
+    border: 1.5px solid var(--white);
+    outline: none;
+    border: 1.5px solid rgb(190, 188, 188);
+    border-radius: 2px;
+    font-weight: bolder;
+    padding: 4px 10px;
+}
+
+.form-control .reg-input {
+    width: 60%;
+}
+
+.form-control input:focus {
+    outline: none;
+    border-color: var(--headerBlue);
+}
+
+.submit-btn-container {
+    text-align: center;
+}
+
+.submit-btn-container input[type="submit"] {
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.05rem;
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin: 5px 0px;
+    transition: 0.2s;
+    background-color: var(--grey);
+}
+
+.submit-btn-container input[type="submit"]:hover {
+    color: var(--headerBlue);
+}
+
+.submit-btn-container input[type="submit"]:focus {
+    outline: none;
+}
+
+.register-form {
+    width: 40%;
+    padding: 15px;
+    margin: auto;
+    border: 3px solid white;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: white;
+    box-shadow: var(--box_shadow);
+}
+
+.register-form:hover label {
+    color: var(--grey);
+}
+
+.message-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+.login-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.login-form-container {
+    border: 2.5px solid var(--white);
+    border-radius: 5px;
+    max-width: 500px;
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+    transition: 0.3s;
+    background-color: white;
+    box-shadow: var(--box_shadow);
+}
+
+.login-form-container p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.login-form-container a {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: rgb(85, 84, 84);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-form-container a:hover {
+    color: black;
+}
+
+#passwordconfirm {
+    width: 100%;
+}
+
+.password-eye {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: gray;
+    cursor: pointer;
+}
+
+.password-eye-confirm {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: gray;
+    cursor: pointer;
+}
+
+.password-eye:hover {
+    color: var(--grey);
+}
+
+.password-eye-confirm:hover {
+    color: var(--grey);
+}
+
+/* ----- End of Form Styling -----*/
+
+/* ----- Error Message Styling ----- */
+
+.error-box {
+    width: 100%;
+    background-color: white;
+    color: red;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    padding: 8px 10px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: var(--box_shadow);
+}
+
+.success-box {
+    width: 100%;
+    background-color: white;
+    color: rgb(9, 172, 9);
+    border-radius: 5px;
+    margin-bottom: 50px;
+    padding: 8px 10px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: var(--box_shadow);
+}
+
+.login-alert {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* ----- End of Error Message Styling ----- */
+
+/* ----- Footer Styling -----*/
+.info-footer {
+    background-color: var(--headerBlue);
+    padding: 8px 0px;
+}
+
+.info-footer .max-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info-footer .info-section {
+    padding: 5px 0px;
+}
+
+.info-footer .max-container a {
+    display: inline;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    font-size: 0.75rem;
+}
+
+.info-footer .max-container a:hover {
+    color: var(--grey);
+}
+
+footer {
+    background-color: var(--grey);  
+}
+
+footer h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 15px 0px;
+}
+/* ----- End of Footer Styling -----*/
+
+/* ----- Tablet Styling -----*/
+/* ----- End of  Styling -----*/
+
+/* ----- Mobile Phone Styling -----*/
+@media screen and (max-width: 780px) {
+
+    .nav-container {
+        overflow: hidden;
+    }
+
+    nav {
+        display: block;
+        height: auto;
+        text-align: center;
+    }
+
+    nav .header-container h1 {
+        padding: 15px;
+    }
+
+    nav .links-container {
+        height: 0;
+        transition: 0.3s;
+    }
+
+    nav .links-container ul {
+        display: block;
+    }
+
+    nav .links-container ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    button.toggler {
+        display: block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    button.toggler i {
+        font-size: 1.5rem;
+        color: var(--white);
+        transition: 0.3s;
+    }
+
+    button.toggler i:hover {
+        font-size: 1.5rem;
+        color: darkblue;
+    }
+}
+/* ----- End of Mobile Phone Styling -----*/
+
+/* ----- RESET LINKS CONTAINER HEIGHT ON RESIZE TO PC SCREEN -----*/
+@media screen and (min-width: 780px) {
+    nav .links-container {
+        height: auto !important;
+    }
+}
+/* ----- END OF RESET LINKS CONTAINER HEIGHT ON RESIZE TO PC SCREEN -----*/
